@@ -52,6 +52,15 @@
     button:hover {
       background-color: #d8b0f9;
     }
+    
+    #no {
+      background-color: #000000;
+      position: relative;
+    }
+
+    #no:hover {
+      background-color: #d8b0f9;
+    }
 
     .final-message {
       font-size: 2.5em;
@@ -70,13 +79,13 @@
   <h1 style="color: #d8b0f9; text-shadow: 2px 2px #000;">Franchesca will you be my Girlfriend? 💜</h1>
 
   <div class="buttons">
-    <button id="yes1">Yes 💜</button>
-    <button id="yes2">Yes(YOU GOT NO CHOICE;)) 💜</button>
+    <button id="yes1">Yesssssss 💜</button>
+    <button id="no">Nooooooo</button>
   </div>
 
   <script>
     const yes1 = document.getElementById('yes1');
-    const yes2 = document.getElementById('yes2');
+    const no = document.getElementById('no');
 
     yes1.addEventListener('click', () => {
       document.body.innerHTML = `
@@ -85,10 +94,12 @@
       `;
     });
 
-    yes2.addEventListener('click', () => {
-      document.body.innerHTML = `
-        <h1 class="final-message" style="color: #d8b0f9;">HEHE YOU GOT NO CHOICE BUT TO BE MINE ONLY HEHE MWAAAAH!!</h1>
-        <img class="final-img" src="https://media.tenor.com/JJQFSScuR8kAAAAC/kuromi-love.gif" alt="Kuromi with hearts" />
+   no.addEventListener('mouseover', () => {
+      const randomX = Math.floor(Math.random() * (window.innerWidth - 100));
+      const randomY = Math.floor(Math.random() * (window.innerHeight - 50));
+      no.style.position = 'absolute';
+      no.style.left = `${randomX}px`;
+      no.style.top = `${randomY}px`;
       `;
     });
   </script>
