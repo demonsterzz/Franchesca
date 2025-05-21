@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Franchesca will you mermaid me?</title>
+  <title>Will You Go Out With Me?</title>
   <style>
     body {
-      background-image: url('https://cdn.hibervr.com/thumbnails/1435676/1720797321442.320.jpg');
+      background-image: url('https://i.imgur.com/8a2HjZk.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -21,6 +21,7 @@
     h1 {
       font-size: 2.5em;
       margin-bottom: 10px;
+      color: lavender;
       text-shadow: 2px 2px #000;
     }
 
@@ -35,6 +36,7 @@
       display: flex;
       justify-content: center;
       gap: 40px;
+      flex-wrap: wrap;
     }
 
     button {
@@ -44,28 +46,29 @@
       border-radius: 12px;
       cursor: pointer;
       transition: 0.3s ease;
-      background-color: #000000;
+      background-color: #9c27b0;
       color: white;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     }
 
     button:hover {
-      background-color: #d8b0f9;
+      background-color: #8e24aa;
     }
-    
+
     #no {
-      background-color: #000000;
+      background-color: #d32f2f;
       position: relative;
     }
 
     #no:hover {
-      background-color: #d8b0f9;
+      background-color: #c62828;
     }
 
     .final-message {
       font-size: 2.5em;
       margin-top: 100px;
       text-shadow: 2px 2px #000;
+      color: lavender;
     }
 
     .final-img {
@@ -75,32 +78,32 @@
   </style>
 </head>
 <body>
-  <img class="kuromi-img" src="https://wallpapers.com/images/hd/kuromi-with-hearts-vector-art-wo6pm1ll6qs3cubq.jpg" alt="Kuromi" />
-  <h1 style="color: #d8b0f9; text-shadow: 2px 2px #000;">Franchesca will you be my Girlfriend? 💜</h1>
+  <img class="kuromi-img" src="https://i.pinimg.com/originals/3b/94/8e/3b948ec3ce4cb154bc7dc3dd5b6ab8b6.png" alt="Kuromi" />
+  <h1>Will You Go Out With Me? 💜</h1>
 
   <div class="buttons">
-    <button id="yes1">Yesssssss 💜</button>
-    <button id="no">Nooooooo</button>
+    <button id="yes">Yes 💖</button>
+    <button id="no">No 😢</button>
   </div>
 
   <script>
-    const yes1 = document.getElementById('yes1');
+    const yes = document.getElementById('yes');
     const no = document.getElementById('no');
 
-    yes1.addEventListener('click', () => {
+    yes.addEventListener('click', () => {
       document.body.innerHTML = `
-        <h1 class="final-message" style="color: #d8b0f9;">YAAAAAY! 🥰 I knew you'd say yes! We're finally official now hehe, MWAAAH! 💕</h1>
+        <h1 class="final-message">Awww yay! 🥰 I knew you'd say yes! Let's plan something fun 💕</h1>
         <img class="final-img" src="https://media.tenor.com/BYQZkMN7gQwAAAAC/kuromi-sanrio.gif" alt="Excited Kuromi" />
       `;
     });
 
-   no.addEventListener('mouseover', () => {
+    // No button runs away on hover
+    no.addEventListener('mouseover', () => {
       const randomX = Math.floor(Math.random() * (window.innerWidth - 100));
       const randomY = Math.floor(Math.random() * (window.innerHeight - 50));
       no.style.position = 'absolute';
       no.style.left = `${randomX}px`;
       no.style.top = `${randomY}px`;
-      `;
     });
   </script>
 </body>
