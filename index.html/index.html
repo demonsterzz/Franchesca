@@ -94,14 +94,16 @@
       `;
     });
 
-    // No button runs away on hover
-    no.addEventListener('mouseover', () => {
-      const randomX = Math.floor(Math.random() * (window.innerWidth - 100));
-      const randomY = Math.floor(Math.random() * (window.innerHeight - 50));
-      no.style.position = 'absolute';
-      no.style.left = `${randomX}px`;
-      no.style.top = `${randomY}px`;
-    });
-  </script>
+    function moveNoButtonAway() {
+    const randomX = Math.floor(Math.random() * (window.innerWidth - 100));
+    const randomY = Math.floor(Math.random() * (window.innerHeight - 50));
+    no.style.position = 'absolute';
+    no.style.left = `${randomX}px`;
+    no.style.top = `${randomY}px`;
+  }
+
+  no.addEventListener('mouseover', moveNoButtonAway); // desktop
+  no.addEventListener('click', moveNoButtonAway);     // mobile
+</script>
 </body>
 </html>
