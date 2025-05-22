@@ -61,6 +61,7 @@
 
     #no:hover {
       background-color: #d8b0f9;
+    }
 
     .final-message {
       font-size: 2.5em;
@@ -72,20 +73,22 @@
       margin-top: 30px;
       width: 200px;
     }
-      @keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
-.animated-message {
-  animation: fadeInUp 1s ease forwards;
-}
+    /* ✨ Fade-in Animation */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animated-message {
+      animation: fadeInUp 1s ease forwards;
+    }
   </style>
 </head>
 <body>
@@ -103,23 +106,27 @@
 
     yes.addEventListener('click', () => {
       document.body.innerHTML = `
-        <h1 class="final-message animated-message" style="color: #d8b0f9; margin-top: 40px;">YAAAAAY!🥰 I knew you'd say yes! We're finally official now hehe, MWAAAH!💕</h1>
-        <img class="final-message animated-message" src="https://media.tenor.com/6oVpxIFwAAoAAAAM/cat-kiss.gif" />
-        <h1 class="final-message animated-message" style="color: #d8b0f9; margin-top: 20px;">HERES A PROMISE RING FOR YOU!! HEHE MWAAAAH I LOVE YOUUUUU</h1>
-        <img class="final-message animated-message" src="https://ae-pic-a1.aliexpress-media.com/kf/S3884272b2c274a3bba18305f8c999302H.jpg_220x220q75.jpg_.avif" />
+        <h1 class="final-message animated-message" style="color: #d8b0f9; margin-top: 40px;">
+          YAAAAAY!🥰 I knew you'd say yes! We're finally official now hehe, MWAAAH!💕
+        </h1>
+        <img class="final-img animated-message" src="https://media.tenor.com/6oVpxIFwAAoAAAAM/cat-kiss.gif" />
+        <h1 class="final-message animated-message" style="color: #d8b0f9; margin-top: 20px;">
+          HERES A PROMISE RING FOR YOU!! HEHE MWAAAAH I LOVE YOUUUUU
+        </h1>
+        <img class="final-img animated-message" src="https://ae-pic-a1.aliexpress-media.com/kf/S3884272b2c274a3bba18305f8c999302H.jpg_220x220q75.jpg_.avif" />
       `;
     });
 
     function moveNoButtonAway() {
-    const randomX = Math.floor(Math.random() * (window.innerWidth - 100));
-    const randomY = Math.floor(Math.random() * (window.innerHeight - 50));
-    no.style.position = 'absolute';
-    no.style.left = `${randomX}px`;
-    no.style.top = `${randomY}px`;
-  }
+      const randomX = Math.floor(Math.random() * (window.innerWidth - 100));
+      const randomY = Math.floor(Math.random() * (window.innerHeight - 50));
+      no.style.position = 'absolute';
+      no.style.left = `${randomX}px`;
+      no.style.top = `${randomY}px`;
+    }
 
-  no.addEventListener('mouseover', moveNoButtonAway); // desktop
-  no.addEventListener('click', moveNoButtonAway);     // mobile
-</script>
+    no.addEventListener('mouseover', moveNoButtonAway);
+    no.addEventListener('click', moveNoButtonAway);
+  </script>
 </body>
 </html>
